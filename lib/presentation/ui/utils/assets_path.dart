@@ -5,4 +5,6 @@ class AssetsPath{
   static const String monitor= '$_images/monitor.png';
   static const String google= '$_images/img_4.png';
   static const String fb= '$_images/img_5.png';
+  static const String furniture= '$_images/img_9.png';
+  static const String sofa= '$_images/img_7.png';
 }
