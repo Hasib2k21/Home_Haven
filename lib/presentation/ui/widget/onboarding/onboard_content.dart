@@ -33,18 +33,26 @@ class OnboardContent extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        Text(
-          title!,
-          style: Theme.of(context)
-              .textTheme
-              .headlineLarge!
-              .copyWith(fontWeight: FontWeight.bold,color: AppColors.textHead),textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 8),
-        Text(
-          text!,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.textBody,fontSize: 16),
-          textAlign: TextAlign.center,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+
+            children: [
+              Text(
+                title!,
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineLarge!
+                    .copyWith(fontWeight: FontWeight.bold,color: AppColors.textHead),textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                text!,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.textBody,fontSize: 16),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_haven/presentation/ui/screens/auth/sign_in_screen.dart';
 import 'package:home_haven/presentation/ui/screens/bottom_nav_screen.dart';
 import 'package:home_haven/presentation/ui/utils/app_colors.dart';
 
@@ -59,7 +60,7 @@ class OnboardingScreen extends StatelessWidget {
                 return ElevatedButton(
                   onPressed: controller.currentPage.value == demoData.length - 1
                       ? () {
-                          Get.to(() => const BottomNavScreen());
+                          Get.to(() => const SignInScreen());
                         }
                       : null, // Disable button unless on the last page
                   style: ElevatedButton.styleFrom(
