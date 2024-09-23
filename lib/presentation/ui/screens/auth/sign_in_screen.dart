@@ -119,9 +119,9 @@ class _SignInScreenState extends State<SignInScreen> {
                 const SizedBox(height: 40),
                 _buildOrSizedBox(),
                 const SizedBox(height: 30),
-                _buildGoogleElevatedButton(),
+                _buildFbElevatedButton('Log In With Google', AssetsPath.google),
                 const SizedBox(height: 12),
-                _buildFbElevatedButton(),
+                _buildFbElevatedButton('Log In With Facebook', AssetsPath.fb),
                 const SizedBox(height: 36),
                 _buildRichText(context),
               ],
@@ -160,30 +160,7 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  Widget _buildGoogleElevatedButton() {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        side: const BorderSide(color: AppColors.themeColor, width: 1),
-      ),
-      onPressed: () {
-        // Handle Google sign in
-      },
-      child: Wrap(
-        crossAxisAlignment: WrapCrossAlignment.center,
-        spacing: 12,
-        children: [
-          Image.asset(AssetsPath.google, height: 20),
-          const Text(
-            'Log In With Google',
-            style: TextStyle(color: AppColors.themeColor),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFbElevatedButton() {
+  Widget _buildFbElevatedButton(String text, image) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white,
@@ -194,10 +171,13 @@ class _SignInScreenState extends State<SignInScreen> {
         crossAxisAlignment: WrapCrossAlignment.center,
         spacing: 12,
         children: [
-          Image.asset(AssetsPath.fb, height: 20),
-          const Text(
-            'Log In With Facebook',
-            style: TextStyle(color: AppColors.themeColor),
+          Image.asset(
+            image,
+            height: 20,
+          ),
+          Text(
+            text,
+            style: const TextStyle(color: AppColors.themeColor),
           ),
         ],
       ),
