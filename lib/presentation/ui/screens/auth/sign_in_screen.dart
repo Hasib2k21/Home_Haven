@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_haven/presentation/ui/screens/auth/sign_up_screen.dart';
 import 'package:home_haven/presentation/ui/screens/bottom_nav_screen.dart';
 import 'package:home_haven/presentation/ui/utils/app_colors.dart';
 import 'package:home_haven/presentation/ui/utils/assets_path.dart';
@@ -201,7 +202,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   style: const TextStyle(color: AppColors.themeColor),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      // Handle register navigation
+                     Get.off(()=>const SignUpScreen());
                     },
                 ),
               ],
