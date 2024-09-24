@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 const List<Map<String, dynamic>> productList = [
   {
     'imageUrl': 'assets/images/img_7.png',
@@ -44,4 +46,21 @@ const List<Map<String, dynamic>> productList = [
     'rating': 4.3,
     'reviews': 65,
   },
+];
+
+
+
+final List<Map<String, dynamic>> categories = [
+  {
+    'icon': Icons.outdoor_grill,
+    'label': 'Outdoor',
+    'color': Colors.green[100]
+  },
+  {
+    'icon': Icons.local_laundry_service,
+    'label': 'Appliances',
+    'color': Colors.blue[100]
+  },
+  {'icon': Icons.chair, 'label': 'Furniture', 'color': Colors.orange[100]},
+  {'icon': Icons.more_horiz, 'label': 'See More', 'color': Colors.grey[200]},
 ];

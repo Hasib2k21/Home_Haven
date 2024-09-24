@@ -111,8 +111,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
-                      // Proceed to log in if the form is valid
-                      Get.to(() => const BottomNavScreen());
+
                     }
                   },
                   child: const Text('Log In'),

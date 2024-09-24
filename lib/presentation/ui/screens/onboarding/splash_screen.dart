@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_haven/presentation/ui/screens/home/home_screen.dart';
 import 'package:home_haven/presentation/ui/utils/app_colors.dart';
 import '../../widget/onboarding/app_logo.dart';
 import '../bottom_nav_screen.dart';
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _movetoNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
-    Get.off(() => OnboardingScreen());
+    Get.off(() =>BottomNavScreen());
   }
 
   @override

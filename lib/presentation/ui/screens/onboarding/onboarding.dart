@@ -60,7 +60,7 @@ class OnboardingScreen extends StatelessWidget {
                 return ElevatedButton(
                   onPressed: controller.currentPage.value == demoData.length - 1
                       ? () {
-                          Get.to(() => const SignInScreen());
+                         // Get.to(() => const SignInScreen());
                         }
                       : null, // Disable button unless on the last page
                   style: ElevatedButton.styleFrom(
