@@ -18,9 +18,11 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
   final List<Widget> _screen = [
     const HomeScreen(),
-    const MyCartScreen(),
+    const MyCartScreen(cartItems: []),
     const MyAccountScreen(),
   ];
+
+
 
   @override
   Widget build(BuildContext context) {

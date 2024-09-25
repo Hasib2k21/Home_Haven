@@ -1,16 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../../../utils/product_description/product.dart';
 import 'color_selector.dart';
 
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
-    Key? key,
+    super.key,
     required this.product,
     this.pressOnSeeMore,
-  }) : super(key: key);
+  });
 
   final Product product;
   final GestureTapCallback? pressOnSeeMore;
@@ -112,7 +110,7 @@ class ProductDescription extends StatelessWidget {
           const Gap(10),
           Text(
             'Choose a stylish dark color or brighten up your home with '
-                'colorful sarongs. The EKERÖ armchair has a sleek and modern look'
+                'colorful sarongs. The SEEKER armchair has a sleek and modern look'
                 ' with two sides that meet at the back – and a waist support for added'
                 ' comfort!',
             style: Theme.of(context).textTheme.bodyLarge,

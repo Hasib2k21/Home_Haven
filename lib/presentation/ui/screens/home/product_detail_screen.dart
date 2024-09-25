@@ -5,12 +5,23 @@ import '../../widget/home/product_detail/product_description.dart';
 import '../../widget/home/product_detail/product_image.dart';
 import '../../widget/home/product_detail/top_rounded_container.dart';
 
-class ProductDetailsScreen extends StatelessWidget {
+import '../cart/my_cart_screen.dart';
+
+
+class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
 
   @override
+  State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
+}
+
+class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
+  final List<Product> cartItems = []; // Cart items list
+
+  @override
   Widget build(BuildContext context) {
-    final product = demoProducts[0];
+    final product = demoProducts[0]; // Example product, you can change this
+
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
@@ -22,7 +33,7 @@ class ProductDetailsScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
             onPressed: () {
-              // Navigator.pop(context);
+              Navigator.pop(context);
             },
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
@@ -45,25 +56,22 @@ class ProductDetailsScreen extends StatelessWidget {
             color: Colors.white,
             child: Column(
               children: [
-                ProductDescription(
-                  product: product,
-                ),
+                ProductDescription(product: product),
               ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar: _buildBottomNavbar(),
+      bottomNavigationBar: _buildBottomNavbar(product),
     );
   }
 
-  Widget _buildBottomNavbar() {
+  Widget _buildBottomNavbar(Product product) {
     return TopRoundedContainer(
       color: Colors.white,
       child: SafeArea(
         child: Padding(
-          padding:
-              const EdgeInsets.only(left: 20, right: 20, top: 0, bottom: 15),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 0, bottom: 15),
           child: Row(
             children: [
               Container(
@@ -89,7 +97,19 @@ class ProductDetailsScreen extends StatelessWidget {
               SizedBox(
                 width: 280,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      cartItems.add(product); // Add product to cart
+                    });
+
+                    // Navigate to the AddToCartScreen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyCartScreen(cartItems: cartItems),
+                      ),
+                    );
+                  },
                   child: const Text("Add To Cart"),
                 ),
               ),
